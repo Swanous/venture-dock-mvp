@@ -61,6 +61,36 @@
 .event-switcher { display: flex; gap: 8px; margin-bottom: 16px; }
 .event-switcher button { padding: 8px 13px; border: 1px solid #e2eaf0; border-radius: 20px; background: #fff; color: #7b8e9a; font-size: 11px; }
 .event-switcher button.active { border-color: #b8dff6; background: #ecf7fe; color: #1684bd; }
+.event-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin: 2px 0 20px; }
+.event-group { min-width: 0; }
+.event-group > header { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding-bottom: 8px; border-bottom: 1px solid #e5ebf1; }
+.event-group h2 { margin: 0; color: #21364d; font-size: 14px; font-weight: 650; }
+.event-group > header > span { color: #718397; font-size: 11px; white-space: nowrap; }
+.event-choice { display: flex; width: 100%; min-width: 0; align-items: center; gap: 9px; padding: 11px 4px; border: 0; border-bottom: 1px solid #edf1f5; background: transparent; color: #455a70; text-align: left; }
+.event-choice b { flex: 0 0 auto; color: #2581aa; font-size: 11px; font-weight: 600; }
+.event-choice > span { min-width: 0; flex: 1; overflow: hidden; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.event-choice > svg { flex: 0 0 auto; color: #8495a7; }
+.event-choice:hover, .event-choice.active { color: #142338; }
+.event-choice.active { background: #edf7fb; }
+.event-choice.active > span { font-weight: 600; }
+.season-projects { margin: 18px 0 26px; }
+.season-projects-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.season-projects-heading h2 { margin: 0; color: #142338; font-size: 18px; line-height: 1.35; }
+.season-projects-heading p { margin: 5px 0 0; color: #61758b; font-size: 12px; line-height: 1.5; }
+.season-projects-heading > span { flex: 0 0 auto; color: #61758b; font-size: 12px; }
+.season-project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; align-items: stretch; }
+.season-project-card { min-width: 0; overflow: hidden; border: 1px solid #e1e8ef; border-radius: 7px; background: #fff; display: flex; flex-direction: column; }
+.season-project-card > img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #dce8ee; }
+.season-project-body { display: flex; flex: 1; flex-direction: column; padding: 12px; }
+.season-project-meta { display: flex; justify-content: space-between; gap: 8px; color: #62768a; font-size: 11px; }
+.season-project-meta span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.season-project-meta span:last-child { flex: 0 0 auto; color: #25805f; }
+.season-project-body h3 { margin: 8px 0 5px; color: #182b40; font-size: 15px; line-height: 1.35; }
+.season-project-body > p { min-height: 3em; margin: 0; color: #536980; font-size: 12px; line-height: 1.6; }
+.season-project-body footer { display: flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 12px; color: #61758b; font-size: 11px; }
+.season-project-avatars { display: flex; padding-left: 3px; }
+.season-project-avatars .person-photo { width: 24px; height: 24px; margin-left: -3px; border: 2px solid #fff; border-radius: 50%; }
+.season-project-avatars .person-photo:first-child { margin-left: 0; }
 .event-hero { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 26px; border-radius: 13px; background: linear-gradient(120deg,#0e304b,#176b91); color: #fff; }
 .mvp-mode .event-register, .mvp-mode .event-signup-form, .mvp-mode .participant-access-divider, .mvp-mode .participant-section, .mvp-mode .event-link-edit { display: none; }
 .event-hero > div { max-width: 80%; }
@@ -133,5 +163,24 @@
  .participant-section > header { flex-wrap: wrap; }
  .participant-list article { padding: 12px 10px; gap: 8px; }
  .participant-list b { font-size: 11px; }
+}
+@media (min-width: 761px) and (max-width: 900px) {
+ .event-groups { gap: 14px; }
+ .season-project-grid { gap: 10px; }
+ .season-project-body { padding: 10px; }
+}
+@media(max-width:600px) {
+ .event-groups { grid-template-columns: 1fr; gap: 14px; }
+ .season-project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media(max-width:420px) {
+ .season-project-grid { grid-template-columns: 1fr; gap: 12px; }
+ .season-project-card { display: grid; grid-template-columns: 38% minmax(0, 1fr); }
+ .season-project-card > img { height: 100%; min-height: 145px; aspect-ratio: auto; }
+ .season-project-body { padding: 10px; }
+ .season-project-body > p { min-height: 0; }
+ .season-project-meta { font-size: 10px; }
+ .season-project-body h3 { margin: 6px 0 4px; font-size: 14px; }
+ .season-project-body footer { gap: 5px; padding-top: 8px; font-size: 10px; }
 }
 
