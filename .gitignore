@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.netlify/
+design-mocks/
+work/
+outputs/
+.taste-skill/
+*.log
+.DS_Store
